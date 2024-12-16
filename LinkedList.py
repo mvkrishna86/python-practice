@@ -45,6 +45,13 @@ class LinkedList:
         print("")
 
 
+    def print_reverse(self, node):
+        if not node:
+            return
+        self.print_reverse(node.next)
+        print(node.data, end=" ")
+
+
 b = LinkedList()
 b.insert_beginning(1)
 b.insert_end(2)
@@ -54,3 +61,5 @@ b.insert_end(5)
 b.insert_beginning(0)
 
 b.print()
+
+b.print_reverse(b.head)
